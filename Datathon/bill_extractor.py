@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 
 # ---------------------------------------------------------
-# Download image from URL
+# Download image from URL   C:\Program Files\Tesseract-OCR
 # ---------------------------------------------------------
 def fetch_image(url: str) -> Image.Image:
     """
