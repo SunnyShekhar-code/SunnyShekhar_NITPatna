@@ -210,11 +210,12 @@ def extract_bill_info_from_url(url: str) -> dict:
     """
     img = fetch_image(url)
     ocr = ocr_with_positions(img)
-    
+
     rows = assemble_rows(ocr)
 
     header_idx, borders = detect_header_and_boundaries(rows)
     items = extract_items(rows, header_idx, borders)
+
 
     return {
         "is_success": True,
