@@ -8,6 +8,7 @@ app = FastAPI()
 class RequestBody(BaseModel):
     document: str   # URL of the bill  image
 
+# uvicorn app:app --reload
 @app.post("/extract-bill-data")
 def extract_data(body: RequestBody):
     """

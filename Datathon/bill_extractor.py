@@ -3,9 +3,21 @@ from io import BytesIO
 from PIL import Image
 from pytesseract import Output
 import pytesseract
+import shutil
+import sys
 
 # Path to installed OCR executable
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+# On Windows, use the installed path; on Linux (Render), auto-detect
+if sys.platform.startswith("win"):
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+else:
+    # On Linux (Render), tesseract will be in PATH after apt-get install
+    tesseract_path = shutil.which("tesseract")
+    if tesseract_path:
+        pytesseract.pytesseract.tesseract_cmd = tesseract_path
+
 
 
 # ---------------------------------------------------------
