@@ -40,7 +40,7 @@ def ocr_with_positions(img: Image.Image):
 
 
 # ---------------------------------------------------------
-# Convert OCR words into visually aligned rows
+# Convert OCR words into visually aligned rows and
 # ---------------------------------------------------------
 def assemble_rows(ocr, y_gap=12):
     """
