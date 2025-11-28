@@ -179,7 +179,7 @@ def extract_items(rows, header_idx, borders):
         rate = to_float("".join(rate_bucket).strip())
 
         # amount: pick first numeric
-        
+
         amount = None
         for t in amount_bucket:
             v = to_float(t)
@@ -210,6 +210,7 @@ def extract_bill_info_from_url(url: str) -> dict:
     """
     img = fetch_image(url)
     ocr = ocr_with_positions(img)
+    
     rows = assemble_rows(ocr)
 
     header_idx, borders = detect_header_and_boundaries(rows)
