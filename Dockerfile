@@ -17,12 +17,12 @@ COPY . .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-
 # Move into the Datathon folder where app.py lives
 WORKDIR /app/Datathon
 
-# Expose the port Render will hit (not strictly required, but good practice)
+# Expose the port Render will hit (not strictly required)
 EXPOSE 8000
 
-# Use $PORT so Render can inject its own port
-CMD uvicorn app:app --host 0.0.0.0 --port $PORT
+# Start FastAPI using Uvicorn
+# Render automatically injects the PORT environment variable
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
