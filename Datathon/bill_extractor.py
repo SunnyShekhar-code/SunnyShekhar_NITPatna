@@ -179,6 +179,7 @@ def extract_items(rows, header_idx, borders):
         rate = to_float("".join(rate_bucket).strip())
 
         # amount: pick first numeric
+        
         amount = None
         for t in amount_bucket:
             v = to_float(t)
