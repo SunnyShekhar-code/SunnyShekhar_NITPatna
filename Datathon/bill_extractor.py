@@ -68,7 +68,6 @@ def assemble_rows(ocr, y_gap=12):
 
     return buffer
 
-
 # ---------------------------------------------------------
 # Locate header row + determine column boundaries
 # ---------------------------------------------------------
