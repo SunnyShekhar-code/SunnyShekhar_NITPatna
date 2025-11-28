@@ -138,7 +138,7 @@ def remove_slno(desc: str):
 
 
 # ---------------------------------------------------------
-# Parse table rows into structured line-items
+# Parse table rows into structured line-tems 
 # ---------------------------------------------------------
 def extract_items(rows, header_idx, borders):
     """
