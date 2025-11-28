@@ -180,6 +180,7 @@ def extract_items(rows, header_idx, borders):
 
         # amount: pick first numeric
 
+
         amount = None
         for t in amount_bucket:
             v = to_float(t)
